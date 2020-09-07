@@ -1,0 +1,42 @@
+"cloudsm": {
+  "directories": [
+    {
+      "directory": "/hsm",
+      "onefs": false,
+      "s3": {
+        "bucket": "my-hsm",
+        "prefix": "/hsm",
+        "access_key": "<blah>",
+        "secret_key": "<blah>",
+        "tier": "INTELLIGENT_TIERING"
+      },
+      "options": {
+        "owner": true,
+        "permissions": true,
+        "posixacls": true,
+        "ntacls": true,
+        "timestamps": true,
+        "symlinks": "link"
+      }
+    },
+    {
+      "directory": "/archive",
+      "onefs": true
+      "s3": {
+        "bucket": "my-archive",
+        "prefix": "/",
+        "access_key": "<blah>",
+        "secret_key": "<blah>",
+        "tier": "GLACIER"
+      },
+      "options": {
+        "owner": true,
+        "permissions": true,
+        "posixacls": true,
+        "ntacls": true
+        "timestamps": true,
+        "symlinks": "follow"
+      }
+    }
+  ]
+}
